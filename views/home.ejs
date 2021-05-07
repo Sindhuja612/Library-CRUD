@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" 
+  type="image/ico" 
+  href="favicon.ico">
+
+    <title>KMIT Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="icon" type="image/png" href="logo.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    
+   
+  </head>
+<body class="hold-transition sidebar-mini">
+	
+	<div class="wrapper">
+		
+		<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+				<a class="nav-link" data-widget="pushmenu" href="#" role="button"> 
+                                           <i class="fas fa-bars"></i></a>
+				</li>
+				<li class="nav-item d-none d-sm-inline-block">
+				<a href="/" class="nav-link">Home</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+			<a href="/" class="brand-link">
+			  <img src="favicon.ico"
+				   alt="Teleuniv"
+				   class="brand-image img-circle elevation-3">
+			  <span class="brand-text font-weight-light">KMIT Library</span>
+			</a>
+			<div class="sidebar">
+                <nav class="mt-2">
+	                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	                    <li class="nav-item">
+		                    <a href="\addBook" class="nav-link">
+		                    <i class="nav-icon far fa-circle text-info"></i>
+		                    <p>Add Book</p>
+		                    </a>
+	                    </li>
+	                    <li class="nav-item">
+		                    <a href="\updateBook" class="nav-link">
+		                    <i class="nav-icon far fa-circle text-info"></i>
+		                    <p class="text">Update Book Details</p>
+		                    </a>
+	                    </li>
+	                    <li class="nav-item">
+		                    <a href="\deleteBook" class="nav-link">
+		                    <i class="nav-icon far fa-circle text-info"></i>
+		                    <p class="text">Delete Book</p>
+		                    </a>
+	                    </li>
+	  
+	                </ul>
+                </nav>
+			</div>
+		</aside>
+	
+		<div class="content-wrapper">
+			
+			<section class="content-header">
+				<h1>KMIT Library</h1>
+			</section>
+			
+			<section class="content">
+				<div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">Book Details</h3>
+                
+                      <%/*<div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                          <i class="fas fa-minus"></i></button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                          <i class="fas fa-times"></i></button>
+                      </div>*/%>
+                    </div>
+                    <div class="card-body table-responsive p-0" style="height: 400px;">
+                        <table class="table table-striped table-head-fixed text-nowrap">
+                        <tr>
+                          <th style="width: 10%" >Book ID</th>
+                          <th style="width: 20%" >Book Name</th>
+                          <th style="width: 20%" >Author</th>
+                          <th style="width: 10%" >Department</th>
+                          <th style="width: 20%" >Publisher</th>
+                          <th style="width: 10%" >Year of Publication</th>
+                          <th style="width: 10%" >Available Number</th>
+                      </tr>
+                  <tbody>
+                      <% for(var i=0; i< data.length; i++) { %>
+                        <tr>
+                          <td style="text-align: center"><%=data[i].BookId %></td>
+                          <td ><%=data[i].BookName %></td>
+                          <td ><%=data[i].Author %></td>
+                          <td style="text-align: center"><%=data[i].Dept %></td>
+                          <td style="text-align: center"><%=data[i].Publisher%></td>
+                          <td style="text-align: center"><%=data[i].YearofPublication%></td>
+                          <td style="text-align: center"><%=data[i].AvailableNo%></td>
+                        </tr>
+                      <% } %>
+                  </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer clearfix">
+                        <a href="/addBook" class="btn btn-primary float-left">
+                        <i class="fas fa-plus"></i>
+                        Add Book</a>
+                    </div>
+                </div>
+			</section>
+		</div>
+	</div>
+</body>
+</html>
